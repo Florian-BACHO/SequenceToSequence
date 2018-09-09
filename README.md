@@ -1,5 +1,5 @@
 # SequenceToSequence
-My implementation of Sequence To Sequence model (Seq2sSq) using Tensorflow. This Long Short Term Memory (LSTM) based encoder / decode allow learning semantic representations of variables sequences (like words or sentenses)
+My implementation of Sequence To Sequence model (Seq2Seq) using Tensorflow. This Long Short Term Memory (LSTM) based encoder / decode allow learning semantic representations of variables sequences (like words or sentenses)
 ## Letter sequences example
 The implemented exemple in the main.py file is a word embedding model that take letters as features sequences (26 features as one hot vector).
 
