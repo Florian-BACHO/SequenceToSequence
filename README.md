@@ -10,5 +10,8 @@ Optimized hyperparameters are:
 - Number of hidden lstm units (optimal value: 150)
 - Training batch size (optimal value: 50)
 
+### Results
+Reached accuracy: 0.98 in 15k training steps
+
 # Useful links
 [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)
