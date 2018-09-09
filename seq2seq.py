@@ -1,6 +1,5 @@
 import tensorflow as tf
 import numpy as np
-from collections import namedtuple
 
 NB_HIDDEN = 25
 BATCH_SIZE = 100
@@ -8,9 +7,6 @@ NB_STEP = 15
 NB_FEATURES = 10
 LEARNING_RATE = 1e-2
 STOP_TRESHOLD = 0.95
-
-InitialStates = namedtuple("INITIAL_STATES", ["hiddens", "currents"])
-LSTMLayer = namedtuple("LSTM_LAYER", ["x", "initial_states", "outputs", "hiddens_states"])
 
 # Random one hot batch generator tensor
 random_one_hot_batch_generator = tf.one_hot(tf.random_uniform([NB_STEP], minval=0, \
