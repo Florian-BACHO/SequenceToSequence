@@ -2,16 +2,16 @@ import tensorflow as tf
 
 class Decoder:
     def __init__(self, batch_shape, nb_features, initial_state, nb_cell):
-        self.nb_step = batch_shape[0]
-        self.batch_size = batch_shape[1]
+        self.batch_size = batch_shape[0]
+        self.nb_step = batch_shape[1]
         self.nb_features = nb_features
 
         self.initial_state = initial_state
 
-        lstm_cell = tf.contrib.rnn.LSTMCell(nb_cell)
+        lstm_cell = tf.contrib.rnn.GRUCell(nb_cell)
 
         lstm_outputs_ta, final_output, last_state = tf.nn.raw_rnn(lstm_cell, self._loop_fn)
-        lstm_outputs = lstm_outputs_ta.stack()
+        lstm_outputs = tf.transpose(lstm_outputs_ta.stack(), perm=[1, 0, 2])
 
         outputs_activation = lambda x: tf.layers.dense(x, nb_features)
         self.outputs = tf.map_fn(outputs_activation, lstm_outputs)
@@ -34,5 +34,5 @@ class Decoder:
         return (elements_finished, next_input, next_cell_state, emit_output, next_loop_state)
 
     # Return decoder outputs
-    def forward(self, feed_dict):
+    def forward(self, sess, feed_dict):
         return sess.run(self.outputs, feed_dict=feed_dict)
