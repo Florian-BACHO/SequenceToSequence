@@ -29,5 +29,8 @@ Optimized hyperparameters are:
 Reached 100% accuracy in 50 to 100 training steps.  
 The sentence "This cat is cute" is closer to "This cat is eating" (distance: 0.3331) than "My name is Florian" (distance: 1.2888).
 
-# Useful links
+## Other applications
+- [Deep Spelling Corrections](https://machinelearnings.co/deep-spelling-9ffef96a24f6)
+
+## Useful links
 [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215.pdf)
